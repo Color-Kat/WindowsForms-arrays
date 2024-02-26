@@ -78,5 +78,23 @@ namespace MyArrays
 
             return result;
         }
+
+        public void InsertingSort(DataGridView dataGridView, Label resultLabel)
+        {
+            _array[0] = 111;
+            Show(dataGridView, resultLabel);
+        }
+        
+        public void BubbleSort(DataGridView dataGridView, Label resultLabel)
+        {
+            _array[0] = 222;
+            Show(dataGridView, resultLabel);
+        }
+
+        public void ShellSort(DataGridView dataGridView, Label resultLabel)
+        {
+            _array[0] = 333;
+            Show(dataGridView, resultLabel);
+        }
     }
 }

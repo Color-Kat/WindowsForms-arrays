@@ -48,6 +48,7 @@ namespace MyArrays
 
         private void length_TextChanged(object sender, EventArgs e)
         {
+
         }
 
         private void range_TextChanged(object sender, EventArgs e)
@@ -55,5 +56,19 @@ namespace MyArrays
 
         }
 
+        private void insertionSort_Click(object sender, EventArgs e)
+        {
+            ArrayProcessor.InsertingSort(dataGridView, resultLabel);
+        }
+
+        private void bubbleSort_Click(object sender, EventArgs e)
+        {
+            ArrayProcessor.BubbleSort(dataGridView, resultLabel);
+        }
+
+        private void ShellSort_Click(object sender, EventArgs e)
+        {
+            ArrayProcessor.ShellSort(dataGridView, resultLabel);
+        }
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dataGridView1 = new DataGridView();
             createButton = new Button();
             lengthInput = new TextBox();
@@ -40,6 +40,11 @@
             dataGridView = new DataGridView();
             Array = new DataGridViewTextBoxColumn();
             resultLabel = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            ShellSort = new Button();
+            bubbleSort = new Button();
+            insertionSort = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
@@ -56,7 +61,7 @@
             // createButton
             // 
             createButton.ForeColor = SystemColors.ControlText;
-            createButton.Location = new Point(593, 197);
+            createButton.Location = new Point(593, 255);
             createButton.Name = "createButton";
             createButton.Size = new Size(220, 52);
             createButton.TabIndex = 1;
@@ -66,7 +71,7 @@
             // 
             // lengthInput
             // 
-            lengthInput.Location = new Point(851, 54);
+            lengthInput.Location = new Point(851, 112);
             lengthInput.Name = "lengthInput";
             lengthInput.Size = new Size(225, 43);
             lengthInput.TabIndex = 2;
@@ -74,7 +79,7 @@
             // 
             // rangeInput
             // 
-            rangeInput.Location = new Point(851, 128);
+            rangeInput.Location = new Point(851, 186);
             rangeInput.Name = "rangeInput";
             rangeInput.Size = new Size(225, 43);
             rangeInput.TabIndex = 3;
@@ -83,7 +88,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(590, 54);
+            label1.Location = new Point(590, 112);
             label1.Name = "label1";
             label1.Size = new Size(174, 37);
             label1.TabIndex = 4;
@@ -92,7 +97,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(590, 128);
+            label2.Location = new Point(590, 186);
             label2.Name = "label2";
             label2.Size = new Size(198, 37);
             label2.TabIndex = 5;
@@ -101,7 +106,7 @@
             // showButton
             // 
             showButton.ForeColor = SystemColors.ControlText;
-            showButton.Location = new Point(851, 197);
+            showButton.Location = new Point(851, 255);
             showButton.Name = "showButton";
             showButton.Size = new Size(270, 52);
             showButton.TabIndex = 6;
@@ -112,7 +117,7 @@
             // saveButton
             // 
             saveButton.ForeColor = SystemColors.ControlText;
-            saveButton.Location = new Point(1163, 197);
+            saveButton.Location = new Point(1163, 255);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(270, 52);
             saveButton.TabIndex = 7;
@@ -124,19 +129,20 @@
             // 
             dataGridView.ColumnHeadersHeight = 52;
             dataGridView.Columns.AddRange(new DataGridViewColumn[] { Array });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlLight;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView.Location = new Point(0, 0);
             dataGridView.Name = "dataGridView";
             dataGridView.RowHeadersWidth = 92;
             dataGridView.Size = new Size(560, 1180);
             dataGridView.TabIndex = 0;
+            dataGridView.DefaultCellStyle.ForeColor = Color.Black;
             // 
             // Array
             // 
@@ -148,11 +154,64 @@
             // resultLabel
             // 
             resultLabel.AutoSize = true;
-            resultLabel.Location = new Point(590, 417);
+            resultLabel.Location = new Point(593, 315);
             resultLabel.Name = "resultLabel";
-            resultLabel.Size = new Size(90, 37);
+            resultLabel.Size = new Size(353, 37);
             resultLabel.TabIndex = 9;
-            resultLabel.Text = "label3";
+            resultLabel.Text = "Result will be displayed here";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 20F);
+            label3.Location = new Point(586, 383);
+            label3.Name = "label3";
+            label3.Size = new Size(227, 81);
+            label3.TabIndex = 10;
+            label3.Text = "Sorting";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 20F);
+            label4.Location = new Point(586, 9);
+            label4.Name = "label4";
+            label4.Size = new Size(259, 81);
+            label4.TabIndex = 11;
+            label4.Text = "Creating";
+            // 
+            // ShellSort
+            // 
+            ShellSort.ForeColor = SystemColors.ControlText;
+            ShellSort.Location = new Point(1161, 485);
+            ShellSort.Name = "ShellSort";
+            ShellSort.Size = new Size(270, 52);
+            ShellSort.TabIndex = 14;
+            ShellSort.Text = "Shell";
+            ShellSort.UseVisualStyleBackColor = true;
+            ShellSort.Click += ShellSort_Click;
+            // 
+            // bubbleSort
+            // 
+            bubbleSort.ForeColor = SystemColors.ControlText;
+            bubbleSort.Location = new Point(851, 485);
+            bubbleSort.Name = "bubbleSort";
+            bubbleSort.Size = new Size(270, 52);
+            bubbleSort.TabIndex = 13;
+            bubbleSort.Text = "Bubble";
+            bubbleSort.UseVisualStyleBackColor = true;
+            bubbleSort.Click += bubbleSort_Click;
+            // 
+            // insertionSort
+            // 
+            insertionSort.ForeColor = SystemColors.ControlText;
+            insertionSort.Location = new Point(603, 485);
+            insertionSort.Name = "insertionSort";
+            insertionSort.Size = new Size(220, 52);
+            insertionSort.TabIndex = 12;
+            insertionSort.Text = "Insertion";
+            insertionSort.UseVisualStyleBackColor = true;
+            insertionSort.Click += insertionSort_Click;
             // 
             // MyArraysF
             // 
@@ -160,6 +219,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(1564, 1177);
+            Controls.Add(ShellSort);
+            Controls.Add(bubbleSort);
+            Controls.Add(insertionSort);
+            Controls.Add(label4);
+            Controls.Add(label3);
             Controls.Add(resultLabel);
             Controls.Add(dataGridView);
             Controls.Add(saveButton);
@@ -193,5 +257,10 @@
         private DataGridView dataGridView;
         private Label resultLabel;
         private DataGridViewTextBoxColumn Array;
+        private Label label3;
+        private Label label4;
+        private Button ShellSort;
+        private Button bubbleSort;
+        private Button insertionSort;
     }
 }
