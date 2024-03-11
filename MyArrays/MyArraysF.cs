@@ -71,5 +71,28 @@ namespace MyArrays
         {
             ArrayProcessor.ShellSort();
         }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+
+            int searchFor, result;
+            if(Int32.TryParse(searchInput.Text, out searchFor))
+                result = ArrayProcessor.SearchFirst(searchFor);
+            else 
+                result = -1;
+
+            if (result >= 0)
+            {
+                resultLabel.Text = "Element found: " + (result + 1).ToString(); 
+            } else
+            {
+                resultLabel.Text = "Such an element not found";
+            }
+        }
+
+        private void dichotomyButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

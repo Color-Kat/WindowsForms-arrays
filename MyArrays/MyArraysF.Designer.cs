@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dataGridView1 = new DataGridView();
             createButton = new Button();
             lengthInput = new TextBox();
@@ -38,13 +39,17 @@
             showButton = new Button();
             saveButton = new Button();
             dataGridView = new DataGridView();
-            Array = new DataGridViewTextBoxColumn();
             resultLabel = new Label();
             label3 = new Label();
             label4 = new Label();
             ShellSort = new Button();
             bubbleSort = new Button();
             insertionSort = new Button();
+            label5 = new Label();
+            searchInput = new TextBox();
+            searchButton = new Button();
+            dichotomyButton = new Button();
+            Array = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
@@ -142,21 +147,15 @@
             dataGridView.RowHeadersWidth = 92;
             dataGridView.Size = new Size(560, 1180);
             dataGridView.TabIndex = 0;
-            dataGridView.DefaultCellStyle.ForeColor = Color.Black;
-            // 
-            // Array
-            // 
-            Array.HeaderText = "Array";
-            Array.MinimumWidth = 11;
-            Array.Name = "Array";
-            Array.Width = 225;
             // 
             // resultLabel
             // 
             resultLabel.AutoSize = true;
-            resultLabel.Location = new Point(593, 315);
+            resultLabel.BorderStyle = BorderStyle.FixedSingle;
+            resultLabel.Font = new Font("Segoe UI", 12F);
+            resultLabel.Location = new Point(593, 333);
             resultLabel.Name = "resultLabel";
-            resultLabel.Size = new Size(353, 37);
+            resultLabel.Size = new Size(472, 50);
             resultLabel.TabIndex = 9;
             resultLabel.Text = "Result will be displayed here";
             // 
@@ -213,12 +212,64 @@
             insertionSort.UseVisualStyleBackColor = true;
             insertionSort.Click += insertionSort_Click;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 20F);
+            label5.Location = new Point(586, 585);
+            label5.Name = "label5";
+            label5.Size = new Size(212, 81);
+            label5.TabIndex = 15;
+            label5.Text = "Search";
+            // 
+            // searchInput
+            // 
+            searchInput.Location = new Point(603, 683);
+            searchInput.Name = "searchInput";
+            searchInput.Size = new Size(225, 43);
+            searchInput.TabIndex = 16;
+            // 
+            // searchButton
+            // 
+            searchButton.ForeColor = SystemColors.ControlText;
+            searchButton.Location = new Point(847, 678);
+            searchButton.Name = "searchButton";
+            searchButton.Size = new Size(148, 52);
+            searchButton.TabIndex = 17;
+            searchButton.Text = "Find";
+            searchButton.UseVisualStyleBackColor = true;
+            searchButton.Click += searchButton_Click;
+            // 
+            // dichotomyButton
+            // 
+            dichotomyButton.ForeColor = SystemColors.ControlText;
+            dichotomyButton.Location = new Point(1010, 678);
+            dichotomyButton.Name = "dichotomyButton";
+            dichotomyButton.Size = new Size(253, 52);
+            dichotomyButton.TabIndex = 18;
+            dichotomyButton.Text = "Dichotomy";
+            dichotomyButton.UseVisualStyleBackColor = true;
+            dichotomyButton.Click += dichotomyButton_Click;
+            // 
+            // Array
+            // 
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            Array.DefaultCellStyle = dataGridViewCellStyle1;
+            Array.HeaderText = "Array";
+            Array.MinimumWidth = 11;
+            Array.Name = "Array";
+            Array.Width = 225;
+            // 
             // MyArraysF
             // 
             AutoScaleDimensions = new SizeF(15F, 37F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(1564, 1177);
+            Controls.Add(dichotomyButton);
+            Controls.Add(searchButton);
+            Controls.Add(searchInput);
+            Controls.Add(label5);
             Controls.Add(ShellSort);
             Controls.Add(bubbleSort);
             Controls.Add(insertionSort);
@@ -256,11 +307,15 @@
         private Button saveButton;
         private DataGridView dataGridView;
         private Label resultLabel;
-        private DataGridViewTextBoxColumn Array;
         private Label label3;
         private Label label4;
         private Button ShellSort;
         private Button bubbleSort;
         private Button insertionSort;
+        private Label label5;
+        private TextBox searchInput;
+        private Button searchButton;
+        private Button dichotomyButton;
+        private DataGridViewTextBoxColumn Array;
     }
 }

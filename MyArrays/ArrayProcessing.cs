@@ -93,10 +93,16 @@ namespace MyArrays
             return result;
         }
 
-        public void InsertingSort(int h = 1)
+        public void InsertingSort()
         {
             _array[0] = 111;
 
+            Show();
+        }
+        
+        public void BubbleSort(int h = 1)
+        {
+            int tmp;
             int offset = _length - h - 1;
             bool isFinished = false;
 
@@ -110,29 +116,41 @@ namespace MyArrays
                 {
                     if (_array[i] > _array[i + h])
                     {
+                        // Swap values
+                        tmp = _array[i];
+                        _array[i] = _array[i + h];
+                        _array[i + h] = tmp;
 
+                        j = i;
+                        isFinished = false; // The array is still not ordered
                     }
                 }
-            } while ( j >= 0 );
+            } while (!isFinished);
 
-
-
-
-
-
-            Show();
-        }
-        
-        public void BubbleSort()
-        {
-            _array[0] = 222;
             Show();
         }
 
         public void ShellSort()
         {
-            _array[0] = 333;
+            int h = _length / 2;
+
+            while(h > 0)
+            {
+                BubbleSort(h);
+                h = h / 2;
+            }
+
             Show();
+        }
+
+        public int SearchFirst(int serachFor)
+        {
+            for (int i = 0; i < _length; i++)
+            {
+                if (_array[i] == serachFor) return i; 
+            }
+
+            return -1;
         }
     }
 }
