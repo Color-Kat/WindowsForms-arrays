@@ -11,15 +11,16 @@ namespace MyArrays
         {
             InitializeComponent();
 
-
-
             // Add events
             createButton.Click += createButton_Click;
         }
 
         private void MyArraysF_Load(object sender, EventArgs e)
         {
-            ArrayProcessor = new ArrayProcessing();
+            ArrayProcessor = new ArrayProcessing(
+                dataGridView,
+                resultLabel
+            );
         }
 
         private void createButton_Click(object? sender, EventArgs e)
@@ -39,11 +40,11 @@ namespace MyArrays
 
         private void showButton_Click(object sender, EventArgs e)
         {
-            ArrayProcessor.Show(dataGridView, resultLabel);
+            ArrayProcessor.Show();
         }
         private void saveButton_Click(object sender, EventArgs e)
         {
-            ArrayProcessor.Update(dataGridView, resultLabel);
+            ArrayProcessor.Update();
         }
 
         private void length_TextChanged(object sender, EventArgs e)
@@ -58,17 +59,17 @@ namespace MyArrays
 
         private void insertionSort_Click(object sender, EventArgs e)
         {
-            ArrayProcessor.InsertingSort(dataGridView, resultLabel);
+            ArrayProcessor.InsertingSort();
         }
 
         private void bubbleSort_Click(object sender, EventArgs e)
         {
-            ArrayProcessor.BubbleSort(dataGridView, resultLabel);
+            ArrayProcessor.BubbleSort();
         }
 
         private void ShellSort_Click(object sender, EventArgs e)
         {
-            ArrayProcessor.ShellSort(dataGridView, resultLabel);
+            ArrayProcessor.ShellSort();
         }
     }
 }
