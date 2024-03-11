@@ -76,21 +76,45 @@ namespace MyArrays
         {
 
             int searchFor, result;
-            if(Int32.TryParse(searchInput.Text, out searchFor))
+            if (Int32.TryParse(searchInput.Text, out searchFor))
                 result = ArrayProcessor.SearchFirst(searchFor);
-            else 
+            else
                 result = -1;
 
             if (result >= 0)
             {
-                resultLabel.Text = "Element found: " + (result + 1).ToString(); 
-            } else
+                resultLabel.Text = "Element found: " + (result + 1).ToString();
+            }
+            else
             {
                 resultLabel.Text = "Such an element not found";
             }
         }
 
         private void dichotomyButton_Click(object sender, EventArgs e)
+        {
+            int searchFor, result;
+            if (Int32.TryParse(searchInput.Text, out searchFor))
+                result = ArrayProcessor.BinarySearch(searchFor);
+            else
+                result = -1;
+
+            if (result >= 0)
+            {
+                resultLabel.Text = "Element found: " + (result + 1).ToString();
+            }
+            else
+            {
+                resultLabel.Text = "Such an element not found";
+            }
+        }
+
+        private void sequentialSumButton_Click(object sender, EventArgs e)
+        {
+            ArrayProcessor.sequentialSum();
+        }
+
+        private void parallelSumButton_Click(object sender, EventArgs e)
         {
 
         }

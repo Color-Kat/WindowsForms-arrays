@@ -39,6 +39,7 @@
             showButton = new Button();
             saveButton = new Button();
             dataGridView = new DataGridView();
+            Array = new DataGridViewTextBoxColumn();
             resultLabel = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -49,7 +50,9 @@
             searchInput = new TextBox();
             searchButton = new Button();
             dichotomyButton = new Button();
-            Array = new DataGridViewTextBoxColumn();
+            label6 = new Label();
+            sequentialSumButton = new Button();
+            parallelSumButton = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
@@ -148,6 +151,15 @@
             dataGridView.Size = new Size(560, 1180);
             dataGridView.TabIndex = 0;
             // 
+            // Array
+            // 
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            Array.DefaultCellStyle = dataGridViewCellStyle1;
+            Array.HeaderText = "Array";
+            Array.MinimumWidth = 11;
+            Array.Name = "Array";
+            Array.Width = 225;
+            // 
             // resultLabel
             // 
             resultLabel.AutoSize = true;
@@ -155,7 +167,8 @@
             resultLabel.Font = new Font("Segoe UI", 12F);
             resultLabel.Location = new Point(593, 333);
             resultLabel.Name = "resultLabel";
-            resultLabel.Size = new Size(472, 50);
+            resultLabel.Padding = new Padding(3);
+            resultLabel.Size = new Size(478, 56);
             resultLabel.TabIndex = 9;
             resultLabel.Text = "Result will be displayed here";
             // 
@@ -163,7 +176,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 20F);
-            label3.Location = new Point(586, 383);
+            label3.Location = new Point(580, 459);
             label3.Name = "label3";
             label3.Size = new Size(227, 81);
             label3.TabIndex = 10;
@@ -182,9 +195,9 @@
             // ShellSort
             // 
             ShellSort.ForeColor = SystemColors.ControlText;
-            ShellSort.Location = new Point(1161, 485);
+            ShellSort.Location = new Point(1155, 561);
             ShellSort.Name = "ShellSort";
-            ShellSort.Size = new Size(270, 52);
+            ShellSort.Size = new Size(270, 56);
             ShellSort.TabIndex = 14;
             ShellSort.Text = "Shell";
             ShellSort.UseVisualStyleBackColor = true;
@@ -193,9 +206,9 @@
             // bubbleSort
             // 
             bubbleSort.ForeColor = SystemColors.ControlText;
-            bubbleSort.Location = new Point(851, 485);
+            bubbleSort.Location = new Point(845, 561);
             bubbleSort.Name = "bubbleSort";
-            bubbleSort.Size = new Size(270, 52);
+            bubbleSort.Size = new Size(270, 56);
             bubbleSort.TabIndex = 13;
             bubbleSort.Text = "Bubble";
             bubbleSort.UseVisualStyleBackColor = true;
@@ -204,9 +217,9 @@
             // insertionSort
             // 
             insertionSort.ForeColor = SystemColors.ControlText;
-            insertionSort.Location = new Point(603, 485);
+            insertionSort.Location = new Point(597, 561);
             insertionSort.Name = "insertionSort";
-            insertionSort.Size = new Size(220, 52);
+            insertionSort.Size = new Size(220, 56);
             insertionSort.TabIndex = 12;
             insertionSort.Text = "Insertion";
             insertionSort.UseVisualStyleBackColor = true;
@@ -216,7 +229,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 20F);
-            label5.Location = new Point(586, 585);
+            label5.Location = new Point(580, 661);
             label5.Name = "label5";
             label5.Size = new Size(212, 81);
             label5.TabIndex = 15;
@@ -224,7 +237,7 @@
             // 
             // searchInput
             // 
-            searchInput.Location = new Point(603, 683);
+            searchInput.Location = new Point(597, 759);
             searchInput.Name = "searchInput";
             searchInput.Size = new Size(225, 43);
             searchInput.TabIndex = 16;
@@ -232,9 +245,9 @@
             // searchButton
             // 
             searchButton.ForeColor = SystemColors.ControlText;
-            searchButton.Location = new Point(847, 678);
+            searchButton.Location = new Point(841, 754);
             searchButton.Name = "searchButton";
-            searchButton.Size = new Size(148, 52);
+            searchButton.Size = new Size(148, 56);
             searchButton.TabIndex = 17;
             searchButton.Text = "Find";
             searchButton.UseVisualStyleBackColor = true;
@@ -243,29 +256,55 @@
             // dichotomyButton
             // 
             dichotomyButton.ForeColor = SystemColors.ControlText;
-            dichotomyButton.Location = new Point(1010, 678);
+            dichotomyButton.Location = new Point(1004, 754);
             dichotomyButton.Name = "dichotomyButton";
-            dichotomyButton.Size = new Size(253, 52);
+            dichotomyButton.Size = new Size(253, 56);
             dichotomyButton.TabIndex = 18;
             dichotomyButton.Text = "Dichotomy";
             dichotomyButton.UseVisualStyleBackColor = true;
             dichotomyButton.Click += dichotomyButton_Click;
             // 
-            // Array
+            // label6
             // 
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            Array.DefaultCellStyle = dataGridViewCellStyle1;
-            Array.HeaderText = "Array";
-            Array.MinimumWidth = 11;
-            Array.Name = "Array";
-            Array.Width = 225;
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 20F);
+            label6.Location = new Point(581, 839);
+            label6.Name = "label6";
+            label6.Size = new Size(340, 81);
+            label6.TabIndex = 19;
+            label6.Text = "Summation";
+            // 
+            // sequentialSumButton
+            // 
+            sequentialSumButton.ForeColor = SystemColors.ControlText;
+            sequentialSumButton.Location = new Point(597, 936);
+            sequentialSumButton.Name = "sequentialSumButton";
+            sequentialSumButton.Size = new Size(225, 56);
+            sequentialSumButton.TabIndex = 20;
+            sequentialSumButton.Text = "Sequential sum";
+            sequentialSumButton.UseVisualStyleBackColor = true;
+            sequentialSumButton.Click += sequentialSumButton_Click;
+            // 
+            // parallelSumButton
+            // 
+            parallelSumButton.ForeColor = SystemColors.ControlText;
+            parallelSumButton.Location = new Point(845, 936);
+            parallelSumButton.Name = "parallelSumButton";
+            parallelSumButton.Size = new Size(270, 56);
+            parallelSumButton.TabIndex = 21;
+            parallelSumButton.Text = "Parallel sum";
+            parallelSumButton.UseVisualStyleBackColor = true;
+            parallelSumButton.Click += parallelSumButton_Click;
             // 
             // MyArraysF
             // 
             AutoScaleDimensions = new SizeF(15F, 37F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(1564, 1177);
+            ClientSize = new Size(1564, 1181);
+            Controls.Add(parallelSumButton);
+            Controls.Add(sequentialSumButton);
+            Controls.Add(label6);
             Controls.Add(dichotomyButton);
             Controls.Add(searchButton);
             Controls.Add(searchInput);
@@ -317,5 +356,8 @@
         private Button searchButton;
         private Button dichotomyButton;
         private DataGridViewTextBoxColumn Array;
+        private Label label6;
+        private Button sequentialSumButton;
+        private Button parallelSumButton;
     }
 }

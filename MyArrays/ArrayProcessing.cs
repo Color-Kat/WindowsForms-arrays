@@ -20,7 +20,7 @@ namespace MyArrays
         private static int _range = 0;
 
         // Timer
-        Stopwatch timer = new Stopwatch();
+        private Stopwatch _timer = new Stopwatch();
 
         private DataGridView DataGridView;
         private Label ResultLabel;
@@ -151,6 +151,36 @@ namespace MyArrays
             }
 
             return -1;
+        }
+
+        public int BinarySearch(int searchFor)
+        {
+            int left = 0, middle, right = _length - 1; 
+
+            while (left < right)
+            {
+                middle = (left + right) / 2;
+
+                if (_array[middle] == searchFor) return middle;
+                if (_array[middle] < searchFor) left = middle + 1;
+                if (_array[middle] > searchFor) right = middle;
+            }
+
+            return -1;
+        }
+
+        public void sequentialSum()
+        {
+            _timer.Restart();
+
+            int sum;
+            sum = 0;
+            for (int i = 0; i < _length; i++)
+                sum += _array[i];
+
+            _timer.Stop();
+
+            ResultLabel.Text = $"Summa: {sum.ToString()}\nTime: {_timer.Elapsed}";
         }
     }
 }
