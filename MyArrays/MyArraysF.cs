@@ -116,7 +116,7 @@ namespace MyArrays
 
         private void parallelSumButton_Click(object sender, EventArgs e)
         {
-
+            ArrayProcessor.parallelSum();
         }
     }
 }

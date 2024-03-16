@@ -192,8 +192,7 @@ namespace MyArrays
         {
             _timer.Restart();
 
-            int sum;
-            sum = 0;
+            long sum = 0;
             for (int i = 0; i < _length; i++)
                 sum += _array[i];
 
@@ -201,5 +200,24 @@ namespace MyArrays
 
             ResultLabel.Text = $"Summa: {sum.ToString()}\nTime: {_timer.Elapsed}";
         }
+
+        public void parallelSum()
+        {
+            _timer.Restart();
+
+            long totalSum = 0;
+
+            // Use Parallel For instead of simple for cycle
+            Parallel.For(0, _length, (index) =>
+            {
+                // Interlocked provides atomic operations for variables that are shared by multiple threads
+                Interlocked.Add(ref totalSum, _array[index]);
+            });
+
+            // Stop timer
+            _timer.Stop(); 
+
+            // Display the result
+            ResultLabel.Text = $"Summa: {totalSum.ToString()}\nTime: {_timer.Elapsed}";
     }
 }
