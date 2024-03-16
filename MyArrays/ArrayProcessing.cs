@@ -95,7 +95,26 @@ namespace MyArrays
 
         public void InsertingSort()
         {
-            _array[0] = 111;
+
+            int index, currentNumber;
+
+            // Iterate arrays
+            for( int i = 0; i < _array.Length; i++ )
+            {
+                index = i;
+                currentNumber = _array[i];
+
+                // Iterate all elements before current element
+                while (index > 0 && currentNumber < _array[index - 1])
+                {
+                    // Move all greater elements efter the current element
+                    _array[index] = _array[index - 1];
+                    index--;
+                }
+
+                // Insert current elemnt before all elements that are greater than it
+                _array[index] = currentNumber;
+            }
 
             Show();
         }
